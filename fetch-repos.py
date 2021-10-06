@@ -1,4 +1,5 @@
 import requests
+import re
 import json
 
 base_url = "https://api.github.com/users/mateusfg7/repos"
@@ -11,5 +12,9 @@ def save_to_file(file_name, data):
         file.write(f'{data}\n')
 
 for repo in response_json:
-    save_to_file('github-repos.txt', repo["html_url"])
-    print(f'{repo["html_url"]}')
+    regex = "(?<=https:\/\/github.com\/mateusfg7\/).*"
+    repo_name = re.findall(regex, repo["html_url"])
+    
+    save_to_file('github-repos.txt', repo_name[0])
+    
+    print(repo_name[0])
