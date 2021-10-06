@@ -8,5 +8,5 @@ Count how many lines a Github user wrote, based on your github public repos and 
 
 The result will be outputed on the terminal.
 
-*Note that the username that will be fetched was currently seted as a hard code, you need to change it to fetch your repos.
+*Note that the username that will be fetched was set as a hard code, you need to change it to fetch your repos.
 
